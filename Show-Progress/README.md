@@ -23,3 +23,13 @@ When run, if command line parameters are not provided, this script will prompt y
 **Interval**
 
 Interval in seconds between each toast. 90 seems like a pretty good balance of notifying enough, but not frequently. 
+
+## Deployment in WorkspaceONE
+1. Download, Show-Progress.ps1, Show-Progress.vbs, and ws1.jpg
+2. Decide where on client you want these to download to and edit Show-Progress.vbs since it is hard coded.
+2. In AW Console, go to Devices, Staging and Provisioning, Components, Files/Action
+3. Add a new file/action
+4. Add all 3 files in "Files" tab. Include full path you decided in step 2.
+5.  In Manifest, add an Action: [Run, Admin, Full path of Show-Progress.vbs, 0]
+6. Save, then go up to Product list and create a new product with this manifest. 
+7. Deploy to smart group
