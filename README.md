@@ -1,9 +1,9 @@
 # WorkspaceONE
 Scripts used with VMware Airwatch/WorkspaceONE
 
-Brooks Peppin  
-Twitter: @brookspeppin  
-Web: www.brookspeppin.com  
+Brooks Peppin <br />
+Twitter: @brookspeppin <br />
+Web: www.brookspeppin.com <br />
 LinkedIn: https://www.linkedin.com/in/brookspeppin/
 
 
