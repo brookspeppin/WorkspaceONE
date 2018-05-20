@@ -12,20 +12,10 @@
 		AirWatch Software Distribution (SFD). Reg keys are located here:
 		HKEY_LOCAL_MACHINE\SOFTWARE\AirWatchMDM\AppDeploymentAgent\Queue
 
-	.EXAMPLE
-	From CMD:
-	Powershell -executionpolicy bypass -command "& .\Show-Progress.ps1 -Interval 90"
-
-	.EXAMPLE
-	From powershell
-	powershell -executionpolicy bypass -file Show-Progress.ps1 -Interval 90
-
-	.EXAMPLE
-	Or using Show-Progress.vbs (just update the hard coded path in vbs file)
-
 	.USAGE
 	Recommend to deploy via Airwatch Product Provisioning so that it can run independently of
 	Software Distribution framework.
+	See brookspeppin.com for full walkthrough. 
 
 	.CREDIT
 	Parts of this script taken from the following people:
@@ -34,13 +24,7 @@
 
 	
 #>
-[CmdletBinding()]
-param
-(
-	[parameter(Mandatory = $true)]
-	[Int]
-	$Interval # number of seconds in between each toast
-)
+
 
 #Variable Section
 $version = 'v4'
@@ -48,7 +32,8 @@ $locallogpath = "C:\VMware_IT\Logs" #local path for logs
 $localfilename = "Show-Progress-$version.log" #local log file name
 $outpath = "C:\VMware_IT\Installs"
 $PSScriptRoot = Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
-$icon = "c:/VMware_IT/Installs/ws1.jpg" #need to use forward slashes
+$interval = "120" # number of seconds in between each toast
+$icon = "c:/VMware_IT/Installs/ws1.jpg" #need to get forward slashes
 $pretimeout = "10" #number of min script will wait for the queue to fill up before quitting
 $duration = "60" #number of min toast notification loop will run for before quitting. 
 #Ensuring log locations exist
@@ -60,7 +45,7 @@ If ((Test-Path $locallogpath) -eq $false)
 }
 
 Start-Transcript $locallogpath\$localfilename
-if ($partofdomain -eq $true) #I've added this section so that it only runs on my azure AD joined systems (optional)
+if ($partofdomain -eq $true)
 {
 	Write-Host "Part of domain: $partofdomain. Exiting script."
 	
