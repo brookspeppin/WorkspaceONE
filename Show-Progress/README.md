@@ -18,7 +18,10 @@ When run, if command line parameters are not provided, this script will prompt y
 
     .\Show-Progress.ps1 -Interval 90
 
-
+##Modifications Required
+- Update Show-Progress.vbs to reflect where on client Show-Progress.ps1 is located
+- Updated $icon variable in Show-progess.ps1 to reflect where on client you put ws1.jpg
+	
 ## Parameters
 **Interval**
 
