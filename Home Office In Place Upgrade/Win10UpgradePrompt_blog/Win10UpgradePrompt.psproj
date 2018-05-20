@@ -1,0 +1,11 @@
+﻿<Project>
+  <Version>2.0</Version>
+  <FileID>ba992ba1-5d50-4bba-ad42-99f28e78416e</FileID>
+  <ProjectType>0</ProjectType>
+  <Folders />
+  <Files>
+    <File Build="0">Startup.pss</File>
+    <File Build="0" Shared="True" ReferenceFunction="Invoke-Global_ps1">Globals.ps1</File>
+    <File Build="0" ReferenceFunction="Show-MainForm_psf">MainForm.psf</File>
+  </Files>
+</Project>
