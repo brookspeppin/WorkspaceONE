@@ -4,7 +4,7 @@
 	 Created with: 	SAPIEN Technologies, Inc., PowerShell Studio 2017 v5.4.141
 	 Created on:   	10/3/2017 2:34 PM
 	 Created by:   	bpeppin, brookspeppin.com, @brookspeppin
-     Updated:		Bpeppin, 5/20/18
+     Updated:		Bpeppin, 3/27/18
 	 Organization: 	VMware, Inc.
 	 Filename:     	AirwatchEnrollment.ps1
 	===========================================================================
