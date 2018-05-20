@@ -6,19 +6,19 @@
 	 Created by:   	Brooks Peppin, @brookspeppin, brookspeppin.com
      Updated:		Bpeppin, 3/23/18
 	 Organization: 	VMware, Inc.
-	 Filename:     	
+	 Filename:     	AirwatchEnrollment.ps1
 	===========================================================================
 	.DESCRIPTION
 		Airwatch Silent Enrollment with SCCM
 		
 	.NOTES
-		Requires Airwatch 9.3 or higher
-		Requires that this be run as the logged on user context who has local admin rights.
+		This method requires a device registration record to be created first. See brookspeppin.com for more details.
 		Please enable user group mapping so that the device is automatically moved to the correct Organization Group. If not,
 		the user will see a popup asking to enter GroupID.
 
     .USAGE
-        Deploy manually or with sccm using command line: powershell -executionpolicy bypass -file AirwatchEnrollment.ps1
+        Deploy manually or with SCCM Application using command line: 
+		powershell -executionpolicy bypass -file AirwatchEnrollment.ps1
         More command line switch details on the AirWatch agent at: 
 		https://my.air-watch.com/help/9.3/en/Content/Platform_Guides/WinDesktop/R/Enroll_SilentCommands.htm
 #>
