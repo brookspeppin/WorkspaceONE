@@ -1,0 +1,16 @@
+Install Context: Device
+Install Command: powershell -executionpolicy bypass -file .\Install-Update.ps1
+Admin Privelages: Yes
+Device Restart: User-Engaged Restart
+Number of day: configure as needed
+Installer Reboot Exit Code: 3010
+Installer Success Exit Code: 0
+
+
+When to Call Install Complete:
+Using Custom Script
+Script Type: Powershell
+Command to Run: powershell -executionpolicy bypass -file .\CheckKB.ps1 -KB KB4558998
+Script File: Upload CheckKB.ps1
+Success code: 0
+
