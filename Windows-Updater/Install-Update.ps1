@@ -4,7 +4,7 @@
 	 Created by:	bpeppin@vmware.com | www.brookspeppin.com 
 	 Organization:	VMware, Inc.
      Filename:     	Install-update.ps1
-     Date:          July 28, 2020
+     Date:          Aug 10, 2020
 	===========================================================================
 	.DESCRIPTION
 		Installs a windows update that is in .cab format. 
