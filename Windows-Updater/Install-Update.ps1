@@ -23,7 +23,7 @@ $fullpath = "$PSScriptRoot\$Filename"
 If (!(Test-Path C:\Temp)) {
     mkdir c:\temp
 }
-Start-Transcript "C:\Temp\Install-Update-$Filename.log"
+Start-Transcript "C:\Temp\Install-Update-$KB.log"
 function CheckKB {
     param (
         # Parameter help description
@@ -51,9 +51,9 @@ else {
     #Write-Host "Starting BitsTransfer download of $KB"
     #Start-BitsTransfer -Source $URL -Destination $fullpath | Out-Host
     Try {
-        Write-Host "Installing $KB with from $fullpath"
-        start-process wusa -ArgumentList "$fullpath /quiet /norestart /log:c:\temp\wusa.evt" -Wait
-        #DISM.exe /online /add-package /PackagePath:$fullpath /NoRestart | Out-Host
+        Write-Host "Installing $KB from $fullpath"
+        #start-process wusa -ArgumentList "$fullpath /quiet /norestart /log:c:\temp\wusa.evt" -Wait
+        DISM.exe /online /add-package /PackagePath:$Filename /NoRestart | Out-Host
     }
     catch {
         $message = "TRAPPED: {0}: '{1}'" -f ($_.Exception.GetType().FullName), ($_.Exception.Message)
