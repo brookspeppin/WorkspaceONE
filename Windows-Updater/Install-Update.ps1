@@ -7,11 +7,16 @@
      Date:          July 28, 2020
 	===========================================================================
 	.DESCRIPTION
-		Installs a windows update that is in .msu format. 
+		Installs a windows update that is in .cab format. 
         
 #>
-$KB = "kb4558998" #2020-07 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB4558998)
-$Filename = (Get-ChildItem -Filter "*.msu").name
+param (
+    # Parameter help description
+    [Parameter(Mandatory = $true)]
+    [String]$KB
+)
+
+$Filename = (Get-ChildItem -Filter "*.cab").name
 $fullpath = "$PSScriptRoot\$Filename"
 #$URL = "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4541335-x64_aa70c2bee5f7d6e375a68d1f325427ecce36ac23.cab"
 
