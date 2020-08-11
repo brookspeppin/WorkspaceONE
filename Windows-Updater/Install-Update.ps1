@@ -44,7 +44,7 @@ function CheckKB {
 
 #Pre-Checking installation of KB
 if (CheckKB -KB $KB) {
-    Write-Host "KB $KB already installed. Exiting."
+    Write-Host "$KB already installed. Exiting."
     Exit 0
 }
 else {
