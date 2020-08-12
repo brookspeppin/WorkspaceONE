@@ -13,7 +13,10 @@
 param (
     # Parameter help description
     [Parameter(Mandatory = $true)]
-    [String]$KB
+	[String]$KB,
+	[parameter(Mandatory = $true)]
+	[ValidateSet('Yes', 'No')]
+	[string]$Reboot
 )
 
 $Filename = (Get-ChildItem -Filter "*.cab").name
@@ -63,13 +66,22 @@ else {
 }
 
 if (CheckKB -KB $KB) {
-    Write-Host "$KB successfully installed. Cleaning up file to free up space. Exiting with reboot code 3010."
-    Remove-Item $fullpath -Force
-    Exit 3010
+    Write-Host "$KB successfully installed. Cleaning up file to free up space."
+	Remove-Item $fullpath -Force
+	If ($Reboot -eq "Yes")
+	{
+		Exit 3010
+	}
+	else
+	{
+		Exit 0
+	}
+	
 }
-else {
-    Write-Host "$KB not installed. Exiting with error code 1."
-    Exit 1
+else
+{
+	Write-Host "$KB not installed. Exiting with error code 1."
+	Exit 1
 }
 
 Stop-Transcript
