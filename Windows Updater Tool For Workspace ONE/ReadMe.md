@@ -19,7 +19,7 @@ This tool supplements Workspace ONE's Windows Update for Business profiles and a
 - Credentials for an adminstrator (you can use your own credentials or create a service account with appropriate admin permissions). 
 
 ## DESCRIPTION
-1. Double-click WindowsUpdaterTool.exe to load the tool.  If Windows blocks it from running, click "Run Anyway". Or you can run the WindowsUpdaterTool.Export.ps1 file instead.
+1. Double-click WindowsUpdaterTool.exe to load the tool.  If Windows Defender Smart screen blocks it from running, click "More Info, then Run Anyway". Or you can run the WindowsUpdaterTool.Export.ps1 file instead.
 2. Select the version of Windows 10 you would need
 3. The latest patches for that version will be populated in the table below. Select the patch you need.
 4. Fill out the Workspace ONE info section
