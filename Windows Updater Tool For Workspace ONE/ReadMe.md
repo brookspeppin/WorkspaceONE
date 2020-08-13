@@ -19,11 +19,11 @@ This tool supplements Workspace ONE's Windows Update for Business profiles and a
 - Credentials for an adminstrator (you can use your own credentials or create a service account with appropriate admin permissions). 
 
 ## DESCRIPTION
-1. Load Tool
+1. Double-click WindowsUpdaterTool.exe to load the tool.  If Windows blocks it from running, click "Run Anyway". Or you can run the WindowsUpdaterTool.Export.ps1 file instead.
 2. Select the version of Windows 10 you would need
 3. The latest patches for that version will be populated in the table below. Select the patch you need.
 4. Fill out the Workspace ONE info section
-	- Server: Need to be in https://as[DS number].awmdm.com. Example: https://as1380.awmdm.com
+	- Server: Need to be in https://asXXXX.awmdm.com. Example: https://as1380.awmdm.com
 	- API Key: Find this under All Settings > System > Advanced > REST API. You can use the built-in one or create your own.
 	- Group ID: Find this by mousing over the Organization Group dropdown at the top of the WS1 UEM Console
 	- Username/Password: enter credentials of an admin account. This will be encoded as BASE64 and then sent over https 
