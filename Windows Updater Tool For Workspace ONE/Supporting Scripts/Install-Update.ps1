@@ -16,17 +16,16 @@ param (
 	[String]$KB,
 	[parameter(Mandatory = $true)]
 	[ValidateSet('Yes', 'No')]
-	[string]$Reboot
+	[string]$CustomRestart
 )
 
 $Filename = (Get-ChildItem -Filter "*.cab").name
 $fullpath = "$PSScriptRoot\$Filename"
-#$URL = "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4541335-x64_aa70c2bee5f7d6e375a68d1f325427ecce36ac23.cab"
 
-If (!(Test-Path C:\Temp)) {
+If (!(Test-Path $env:ProgramData\)) {
     mkdir c:\temp
 }
-Start-Transcript "C:\Temp\Install-Update-$KB.log"
+Start-Transcript "$env:ProgramData\Airwatch\UnifiedAgent\Logs\Install-Update-$KB.log"
 function CheckKB {
     param (
         # Parameter help description
@@ -68,9 +67,14 @@ else {
 if (CheckKB -KB $KB) {
     Write-Host "$KB successfully installed. Cleaning up file to free up space."
 	Remove-Item $fullpath -Force
-	If ($Reboot -eq "Yes")
+	If ($CustomRestart -eq "Yes")
 	{
-		Exit 3010
+        $guid = Split-Path (Split-Path $MyInvocation.MyCommand.Path) -Leaf
+        $key = "AppDeferrals.Interval"
+        [int]$restart = (Get-ItemProperty "HKLM:\SOFTWARE\AirWatchMDM\AppDeploymentAgent\Policy\$guid").$key
+        $name = (Get-ItemProperty "HKLM:\SOFTWARE\AirWatchMDM\AppDeploymentAgent\AppManifests\$guid").Name
+        $restart = $restart * 3
+        shutdown.exe /r /t $restart /c "Update Installed: $name. Restarting in $restart min"
 	}
 	else
 	{
