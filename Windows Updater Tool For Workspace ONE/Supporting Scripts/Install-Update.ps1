@@ -72,11 +72,13 @@ if (CheckKB -KB $KB) {
         Write-Host "Custom restart selected. Querying registry for the specified value."
         $guid = Split-Path (Split-Path $MyInvocation.MyCommand.Path) -Leaf
         $key = "AppDeferrals.Interval"
-        [int]$interval = (Get-ItemProperty "HKLM:\SOFTWARE\AirWatchMDM\AppDeploymentAgent\Policy\$guid").$key
-        Write-Host "Restart interval set to $restart hours"
+
         $name = (Get-ItemProperty "HKLM:\SOFTWARE\AirWatchMDM\AppDeploymentAgent\AppManifests\$guid").Name
         Write-Host "Name of update: $name"
-        $restart = $restart * 60 * 60
+
+        [int]$interval = (Get-ItemProperty "HKLM:\SOFTWARE\AirWatchMDM\AppDeploymentAgent\Policy\$guid").$key
+        $restart = $interval * 60 * 60
+        Write-Host "Restart interval set to $interval hours"
         $reason = "P:2:17" #Operating System: Hot fix (Planned)
         Write-Host "Sending restart command to system. Restarting in $interval hours."
         shutdown.exe /g /t $restart /c "Windows Update Installed: $name. Restarting in $interval hours" /d $reason
