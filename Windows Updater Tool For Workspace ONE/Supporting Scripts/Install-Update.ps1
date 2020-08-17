@@ -78,6 +78,7 @@ if (CheckKB -KB $KB) {
         Write-Host "Name of update: $name"
         $restart = $restart * 60 * 60
         $reason = "P:2:17" #Operating System: Hot fix (Planned)
+        Write-Host "Sending restart command to system. Restarting in $interval hours."
         shutdown.exe /g /t $restart /c "Windows Update Installed: $name. Restarting in $interval hours" /d $reason
 	}
 	else
