@@ -32,5 +32,5 @@ x:\OSDCloud\Autopilot\Profiles\DownloadFilesFromRepo.ps1
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Restarting in 5 seconds!"
-Start-Sleep -Seconds 5
+pause
 wpeutil reboot
