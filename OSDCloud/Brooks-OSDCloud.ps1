@@ -16,18 +16,18 @@ Install-Module OSD -Force
 Import-Module OSD -Force
 
 #TODO: Spend the time to write a function to do this and put it here
-Write-Host  -ForegroundColor Cyan "Ejecting ISO"
-Write-Warning "That didn't work because I haven't coded it yet!"
+#Write-Host  -ForegroundColor Cyan "Ejecting ISO"
+#Write-Warning "That didn't work because I haven't coded it yet!"
 #Start-Sleep -Seconds 5
 
 #Start OSDCloud ZTI the RIGHT way
-Write-Host  -ForegroundColor Cyan "Start OSDCloud with MY Parameters"
+Write-Host  -ForegroundColor Cyan "Start OSDCloud with Parameters: 20H2, ENT, Zero-Touch"
 Start-OSDCloud -OSLanguage en-us -OSBuild 20H2 -OSEdition Enterprise -ZTI
 #Start-OSDCloud -OSLanguage en-us
 
 #Anything I want  can go right here and I can change it at any time since it is in the Cloud!!!!!
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud PostAction ..."
-x:\OSDCloud\Autopilot\DownloadFilesFromRepo.ps1
+x:\OSDCloud\Autopilot\Profiles\DownloadFilesFromRepo.ps1
 
 
 #Restart from WinPE
