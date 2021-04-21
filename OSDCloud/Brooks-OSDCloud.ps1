@@ -39,7 +39,7 @@ $filename = "AwProvAgent-x64.msi"
 Copy-Item -Path $usb\ws1\$filename -Destination $path 
 $filename = "VMwareWS1ProvisioningTool.msi"
 Copy-Item -Path $usb\ws1\VMwareWS1ProvisioningTool.msi -Destination $path
-Copy-Item -Path $usb\ws1\unattend.xml -Destination C:\
+Copy-Item -Path $usb\ws1\unattend.xml -Destination C:\Windows\Panther\Invoke-OSDSpecialize.xml -Force
 
 
 #Restart from WinPE
