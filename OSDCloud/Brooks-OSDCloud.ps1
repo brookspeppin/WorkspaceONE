@@ -43,6 +43,6 @@ Copy-Item -Path $usb\ws1\unattend_OSDCloud.xml -Destination C:\Windows\Panther\I
 
 
 #Restart from WinPE
-Write-Host  -ForegroundColor Cyan "Restarting in 5 seconds!"
-pause
+#Write-Host  -ForegroundColor Cyan "Restarting in 5 seconds!"
+#pause
 wpeutil reboot
