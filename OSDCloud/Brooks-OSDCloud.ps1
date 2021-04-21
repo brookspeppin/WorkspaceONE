@@ -27,7 +27,19 @@ Start-OSDCloud -OSLanguage en-us -OSBuild 20H2 -OSEdition Enterprise -ZTI
 
 #Anything I want  can go right here and I can change it at any time since it is in the Cloud!!!!!
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud PostAction ..."
-x:\OSDCloud\Autopilot\Profiles\DownloadFilesFromRepo.ps1
+#x:\OSDCloud\Autopilot\Profiles\DownloadFilesFromRepo.ps1
+#$USB_Boot = ((Get-Volume).where({ $_.FileSystemLabel -eq "OSDCloud" })).DriveLetter + ":"
+$usb = ((Get-Volume).where({ ($_.FileSystemLabel -eq "OSDCloud") -and ($_.DriveType -eq "Fixed") })).DriveLetter + ":"
+#$usb_source = ((Get-Volume).where({ $_.FileSystemLabel -eq "USB-Source" })).DriveLetter + ":"
+$path = "C:\programdata\vmware\"
+if(!(Test-Path $path)){
+    mkdir $path
+}
+$filename = "AwProvAgent-x64.msi"
+Copy-Item -Path $usb\ws1\$filename -Destination $path 
+$filename = "VMwareWS1ProvisioningTool.msi"
+Copy-Item -Path $usb\ws1\VMwareWS1ProvisioningTool.msi -Destination $path
+Copy-Item -Path $usb\ws1\unattend.xml -Destination C:\
 
 
 #Restart from WinPE
