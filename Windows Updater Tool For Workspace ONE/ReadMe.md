@@ -3,13 +3,13 @@
 ## Overview
 - **Author**: Brooks Peppin
 - **Website**: www.brookspeppin.com
-- **Date Created**: Aug 13, 2020
+- **Date Updated**: Apr 27, 2021
 
 ## SYNOPSIS
 This tool supplements Workspace ONE's Windows Update for Business profiles and approval features.  It downloads the cab file for the specific Windows Update, zips it up with a few scripts, and then uploads to Workspace ONE for deployment via the Software Distribution engine.  The main use cases this tool solves for are:
 1. Times you need to rapidly push down an update and force a restart
 2. When you are beyond the 365 day deferral of the feature upgrade and Windows will no longer take regular patches until you upgrade the feature version. This can buy you a bit more time. 
-
+![Screenshot1](https://user-images.githubusercontent.com/33036379/116281916-6db49580-a747-11eb-92be-35cfebb81bca.png)
 
 ##Requirements##
 - Run on a Windows 10 "host" client. Do not deploy this tool to your endpoints. 
