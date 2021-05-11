@@ -1,4 +1,4 @@
-Write-Host  -ForegroundColor Yello "Starting Brooks' Custom OSDCloud ..."
+Write-Host  -ForegroundColor Yellow "Starting Brooks' Custom OSDCloud ..."
 
 Write-Host "================== Main Menu ==========================" -ForegroundColor Yellow
 Write-Host "===============www.brookspeppin.com =================" -ForegroundColor Yellow
@@ -6,7 +6,7 @@ Write-Host "===================@brookspeppin ===================="-ForegroundCol
 Write-Host "========By Brooks Peppin (bpeppin@vmware.com)=========="-ForegroundColor Yellow
 Write-Host "======================================================="`n-ForegroundColor Yellow
 Write-Host "1: Zero-Touch Win10 21H1 | English | Enterprise"-ForegroundColor Yellow
-Write-Host "2: Zero-Touch Win10 20H2 | English | Enterprise"-ForegroundColor Yellow
+Write-Host "2: Zero-Touch Win10 20H2 | English | Enterprise" -ForegroundColor Yellow
 Write-Host "3: I'll select it myself"-ForegroundColor Yellow
 Write-Host "4: Exit`n"-ForegroundColor Yellow
 $input = Read-Host "Please make a selection"-ForegroundColor Yellow
