@@ -1,16 +1,16 @@
-Write-Host  -ForegroundColor Cyan "Starting Brooks' Custom OSDCloud ..."
+Write-Host  -ForegroundColor Yello "Starting Brooks' Custom OSDCloud ..."
 
-Write-Host "================== Main Menu =========================="
-Write-Host "===============www.brookspeppin.com ================="
-Write-Host "===================@brookspeppin ===================="
-Write-Host "========By Brooks Peppin (bpeppin@vmware.com)=========="
-Write-Host "======================================================="`n
-Write-Host "1: Zero-Touch Win10 21H1 | English | Enterprise"
-Write-Host "2: Zero-Touch Win10 20H2 | English | Enterprise"
-Write-Host "3: I'll select it myself"
-Write-Host "4: Exit`n"
-$input = Read-Host "Please make a selection"
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud PowerShell Module"
+Write-Host "================== Main Menu ==========================" -ForegroundColor Yellow
+Write-Host "===============www.brookspeppin.com =================" -ForegroundColor Yellow
+Write-Host "===================@brookspeppin ===================="-ForegroundColor Yellow
+Write-Host "========By Brooks Peppin (bpeppin@vmware.com)=========="-ForegroundColor Yellow
+Write-Host "======================================================="`n-ForegroundColor Yellow
+Write-Host "1: Zero-Touch Win10 21H1 | English | Enterprise"-ForegroundColor Yellow
+Write-Host "2: Zero-Touch Win10 20H2 | English | Enterprise"-ForegroundColor Yellow
+Write-Host "3: I'll select it myself"-ForegroundColor Yellow
+Write-Host "4: Exit`n"-ForegroundColor Yellow
+$input = Read-Host "Please make a selection"-ForegroundColor Yellow
+Write-Host  -ForegroundColor Yellow "Starting OSDCloud PowerShell Module"
 
 Import-Module OSD -Force
 Install-Module OSD -Force
