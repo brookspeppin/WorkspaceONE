@@ -1,11 +1,7 @@
 Write-Host  -ForegroundColor Cyan "Starting Brooks' Custom OSDCloud ..."
 Start-Sleep -Seconds 5
 
-#Change Display Resolution for Virtual Machine
-if ((Get-MyComputerModel) -match 'Virtual') {
-    Write-Host  -ForegroundColor Cyan "Setting Display Resolution to 1600x"
-    Set-DisRes 1600
-}
+
 Write-Host  -ForegroundColor Cyan "Importing the OSDCloud PowerShell Module"
 Install-Module OSD -Force
 Import-Module OSD -Force
@@ -29,9 +25,9 @@ if ($os.name -eq "|x:\windows|")
 	$input = Read-Host "Please make a selection"
 	switch ($input)
 	{
-		'1' { Start-OSDCloud -OSLanguage en-us -OSBuild 21H1 -OSEdition Enterprise -ZTI } #Call Image_from_network function
-		'2' { Start-OSDCloud -OSLanguage en-us -OSBuild 20H2 -OSEdition Enterprise -ZTI } #Call Image_from_Network function
-		'3' { Start-OSDCloud	} #Call Image_from_Network function
+		'1' { Start-OSDCloud -OSLanguage en-us -OSBuild 21H1 -OSEdition Enterprise -ZTI } 
+		'2' { Start-OSDCloud -OSLanguage en-us -OSBuild 20H2 -OSEdition Enterprise -ZTI } 
+		'3' { Start-OSDCloud	} 
 		'4' { Exit		}
 	}
 
