@@ -1,0 +1,10 @@
+Install Command: powershell -executionpolicy bypass -file .\HubUpgrade.ps1
+Install Context: Device
+Admin Privilages: Yes
+Detection Criteria: App Exists > Enter GUID of the MSI
+##How to get the App GUID:##
+1. Download the desired Workspace ONE AirwatchAgent.msi file
+2. Open Elevated Powershell
+3. Paste in this command:
+ (Get-ItemProperty HKLM:\Software\wow6432node\Microsoft\Windows\CurrentVersion\Uninstall\* | where-Object {$_.DisplayName -like "Workspace ONE Intelligent Hub*" }).PSChildname
+4. This will return the App GUID. Paste that into the detection criteria of the App.
