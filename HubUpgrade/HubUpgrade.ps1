@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------------------------------------------
 # Author:Brooks Peppin, VMware, Inc.
-# Date Updated: 06/24/21
+# Date Updated: 08/17/21
 # Description: Windows 10 Hub Upgrade Via Software Distribution
 # Tested on Hub Version 21.10 > 21.02
 # --------------------------------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ $installBaseDirectory = "INSTALLDIR"
 $agentRegistryLocation = (Get-ItemProperty -Path HKLM:\SOFTWARE\AIRWATCH -Name $installBaseDirectory).$installBaseDirectory
 $installAgentUILocation = $agentRegistryLocation + "\AgentUI"
 $updateFolder = $installAgentUILocation + "\Update"
-$hub = (Get-ItemProperty HKLM:\Software\wow6432node\Microsoft\Windows\CurrentVersion\Uninstall\* | where-Object { $_.DisplayName -like "Airwatch*" -or $_.DisplayName -like "Workspace ONE Intelligent Hub*" }).DisplayVersion
+$hub = (Get-ItemProperty HKLM:\Software\wow6432node\Microsoft\Windows\CurrentVersion\Uninstall\* | where-Object { $_.DisplayName -like "Airwatch*" -or $_.DisplayName -like "Workspace ONE Intelligent Hub*" })
 $version = $hub.DisplayVersion
 $guid = $hub.PSChildname
 
@@ -65,7 +65,7 @@ if(Test-Path $installAgentUILocation\AW.WinPC.Updater.exe){
     Start-Process -FilePath "AW.WinPC.Updater.exe" -WorkingDirectory $installAgentUILocation -Wait
 
 }
-$hub = (Get-ItemProperty HKLM:\Software\wow6432node\Microsoft\Windows\CurrentVersion\Uninstall\* | where-Object { $_.DisplayName -like "Airwatch*" -or $_.DisplayName -like "Workspace ONE Intelligent Hub*" }).DisplayVersion
+$hub = (Get-ItemProperty HKLM:\Software\wow6432node\Microsoft\Windows\CurrentVersion\Uninstall\* | where-Object { $_.DisplayName -like "Airwatch*" -or $_.DisplayName -like "Workspace ONE Intelligent Hub*" })
 $version = $hub.DisplayVersion
 $guid = $hub.PSChildname
 Write-Log "After Upgrade Workspace ONE Version: $version"
