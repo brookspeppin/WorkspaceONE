@@ -5,7 +5,7 @@
 	 Created by:   	Brooks Peppin, www.brookspeppin.com
 	 ==========================================================================
 	.DESCRIPTION
-		Sample script for renewing OAuth tokens in WS1 UEM. From Blog 
+		Sample script for renewing OAuth tokens in WS1 UEM. From Blog https://www.brookspeppin.com/2021/09/07/how-to-renew-oauth-tokens-in-workspace-one-uem/
 #>
 
 
