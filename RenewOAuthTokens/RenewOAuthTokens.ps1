@@ -10,7 +10,7 @@
 
 
 #variables
-$server = "https://cn1506.awmdm.com"
+$server = "https://cnXXXX.awmdm.com"
 
 Function Get-WorkspaceOneOAuth {
     #============================================================================================
